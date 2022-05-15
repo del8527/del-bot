@@ -14,30 +14,8 @@ module.exports = {
         if(!image_query) { 
             return message.channel.send('enter an image name!');
         }
-        const image_results = await google.scrape(image_query, 1);
-        message.channel.send(image_results[0].url);
+        const image_results = await google.scrape(image_query, 50);
+        console.log('results', image_results)
+        message.channel.send(image_results[Math.floor(Math.random() * 50)].url);
     }
 }
-
-// const Commands = require('commands')
-// const axios = require('axios')
-// 
-// module.exports = class CaracalCommand extends Commands.Command {
-//     constructor(client) {
-//         super(client, {
-//             name: 'caracal',
-//             description: 'Displays a random picture of a Caracal'
-//         })
-//     }
-// 
-//     run = async (message) => {
-//         axios
-//             .get('https://api.jbh.rocks/image')
-//             .then((res) => {
-//                 console.log('RES:', res)
-//             })
-//             .catch((err) => {
-//                 console.error('ERR:', err)
-//         })
-//     }
-// }
