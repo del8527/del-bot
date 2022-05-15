@@ -34,13 +34,10 @@ client.on('message', message => {
         client.commands.get('help').execute(message, args);
     } else if (command === 'img' || command === 'image') {
         client.commands.get('img').execute(message, args);
-    } else if (args.length <= 2) {
-        return message.channel.send('type `del help` to see the list of commands');
     } else if (command === 'verify') {
         client.commands.get('hypixel').execute(message, args);
     } else {
-        message.channel.send()
-        return message.channel.send(`Command name: ${command}\nArguments: ${args}`);
+        return message.channel.send('type `del help` to see the list of commands');
     }
 });
 
