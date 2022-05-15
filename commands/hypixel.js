@@ -19,15 +19,15 @@ module.exports = {
               prestige = res.data.player.achievements.pit_prestiges;
               discordId = res.data.player.socialMedia.links.DISCORD;
 
-              if (!(discordId === message.member.user.tag)) {
-                message.channel.send(discordId)
-                message.channel.send(message.member.user.tag)
+              console.log(discordId)
+              console.log(message.member.user.tag)
 
+              if (!(discordId === message.member.user.tag)) {
                   message.channel.send(`Discord account linked to ${playerName} is not yours!`)
-              } else {
-                msg.member.roles.add(975327636693860382)
-                message.channel.send(`Congrats ${discordId}, you are now verified! (you are prestige ${prestige}`)
-              }
+                } else {
+                    msg.member.roles.add(975327636693860382)
+                    message.channel.send(`Congrats ${discordId}, you are now verified! (you are prestige ${prestige}`)
+                }
 
            // message.channel.send({ content: res.data.player.achievements.pit_prestiges });
             // message.channel.send({ content: res.data.player.socialMedia.links.DISCORD });
