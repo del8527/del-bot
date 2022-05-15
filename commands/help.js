@@ -3,7 +3,7 @@ module.exports = {
     description: 'lists the bot commands',
     execute(message, args) {
         message.channel.send(`
-        **del ping** - Try it!\n**del socials** - my socials
+        **del help** - The help command\n**del ping** - Try it!\n**del socials** - my socials\ndel img <argument> - get a picture of <argument>! For example: del img floppa
         `)
     }
 }
