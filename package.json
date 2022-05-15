@@ -1,0 +1,22 @@
+{
+  "name": "del-bot-2",
+  "version": "1.0.0",
+  "description": "A discord bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/del8527/del-bot-2.git"
+  },
+  "author": "Delbert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/del8527/del-bot-2/issues"
+  },
+  "homepage": "https://github.com/del8527/del-bot-2#readme",
+  "dependencies": {
+    "discord.js": "^13.7.0"
+  }
+}
