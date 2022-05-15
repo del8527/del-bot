@@ -16,6 +16,7 @@ module.exports = {
         if(!playerName) return message.channel.send('enter your username!');
         await axios.get(`https://api.hypixel.net/player?key=${process.env.API_KEY}&name=${playerName}`)
           .then((res) => {
+            console.log('test1');
               prestige = res.data.player.achievements.pit_prestiges;
               discordId = res.data.player.socialMedia.links.DISCORD;
               let rank = '';
@@ -29,22 +30,25 @@ module.exports = {
                 rank = 'Non-Rank';
             } // end of calculating ranks
 
-            console.log('test')
-            console.log(rank)
+            var role = member.guild.roles.cache.find(role => role.name === rank);
+            var roleVerified = member.guild.roles.cache.find(role => role.name === "Verified");
+            console.log('added')
+            member.roles.add('975525438262759464');
+            member.roles.add(roleVerified);
+            message.channel.send(`Congrats ${discordId}, you are now verified as ${playerName}! (${rank})`);
 
             if (!(discordId === message.member.user.tag)) {
-                message.channel.send(`Discord account linked to ${playerName} is not yours!`)
+                console.log('test3');
+                message.channel.send(`Discord account linked to ${playerName} is not yours!`);
             } else {
-                var role= member.guild.roles.cache.find(role => role.name === "Verified");
+                console.log('test4');
+                var role= member.guild.roles.cache.find(role => role.name === "verified");
                 member.roles.add(role);
-                message.channel.send(`Congrats ${discordId}, you are now verified as ${playerName}! (${rank})`)
+                message.channel.send(`Congrats ${discordId}, you are now verified as ${playerName}! (${rank})`);
                 console.log(role);
                 console.log(rank);
             }
-
-           // message.channel.send({ content: res.data.player.achievements.pit_prestiges });
-            // message.channel.send({ content: res.data.player.socialMedia.links.DISCORD });
           })
-          .catch(error => message.channel.send("An error occured, try again in 1 minute or ask admins for help"));
+           .catch(error => message.channel.send("An error occured, try again in 1 minute or ask admins for help"));
     }
 }
