@@ -18,20 +18,33 @@ module.exports = {
           .then((res) => {
               prestige = res.data.player.achievements.pit_prestiges;
               discordId = res.data.player.socialMedia.links.DISCORD;
+              let rank = '';
+              if (res.data.player.rank) { // Check if is ADMIN, MOD, HELPER, YT...
+                rank = res.data.player.rank; // player.prefix exist here as well
+            } else if (res.data.player.monthlyPackageRank && res.data.player.monthlyPackageRank !== 'NONE') { // Check if is MVP++
+                rank = 'MVP++'
+            } else if (res.data.player.newPackageRank) { // Check if is VIP...MVP+
+                rank = res.data.player.newPackageRank.replace('_PLUS', '+')
+            } else {
+                rank = 'Non-Rank';
+            } // end of calculating ranks
 
-              console.log(discordId)
-              console.log(message.member.user.tag)
+            console.log('test')
+            console.log(rank)
 
-              if (!(discordId === message.member.user.tag)) {
-                  message.channel.send(`Discord account linked to ${playerName} is not yours!`)
-                } else {
-                    msg.member.roles.add(975327636693860382)
-                    message.channel.send(`Congrats ${discordId}, you are now verified! (you are prestige ${prestige}`)
-                }
+            if (!(discordId === message.member.user.tag)) {
+                message.channel.send(`Discord account linked to ${playerName} is not yours!`)
+            } else {
+                var role= member.guild.roles.cache.find(role => role.name === "Verified");
+                member.roles.add(role);
+                message.channel.send(`Congrats ${discordId}, you are now verified as ${playerName}! (${rank})`)
+                console.log(role);
+                console.log(rank);
+            }
 
            // message.channel.send({ content: res.data.player.achievements.pit_prestiges });
             // message.channel.send({ content: res.data.player.socialMedia.links.DISCORD });
           })
-          .catch(error => message.channel.send("An error occured, try again in 1 minute or ask admins for help!"));
+          .catch(error => message.channel.send("An error occured, try again in 1 minute or ask admins for help"));
     }
 }
