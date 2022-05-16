@@ -47,7 +47,7 @@ To use the bot simply call it with the prefix `del`, followed by a command, foll
 
 ![image](https://user-images.githubusercontent.com/55643100/168502001-5fb6a0c1-7046-4529-93f8-f2f41818ec16.png)
 
-(Verification working! (discord id censored)
+Verification working! (discord id censored)
 
 
 ### Some Code snippits
