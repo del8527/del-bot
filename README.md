@@ -42,6 +42,11 @@ To use the bot simply call it with the prefix `del`, followed by a command, foll
 (If you try to verify with an account that is not your own!)
 
 ![image](https://user-images.githubusercontent.com/55643100/168500932-f3f9d069-ae3b-49be-984e-6f40e4ab4292.png)
+
+![image](https://user-images.githubusercontent.com/55643100/168502022-a5896d97-e5ad-4edb-921f-4f02ffc51167.png)
+
+![image](https://user-images.githubusercontent.com/55643100/168502001-5fb6a0c1-7046-4529-93f8-f2f41818ec16.png)
+
 (Verification working! (discord id censored)
 
 
