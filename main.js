@@ -36,6 +36,8 @@ client.on('message', message => {
         client.commands.get('hypixel').execute(message, args);
     } else if (command === 'schedule') {
         client.commands.get('schedule').execute(message, args);
+    } else if (command === 'crypto') {
+        client.commands.get('crypto').execute(message, args);
     } else {
         return message.channel.send('type `del help` to see the list of commands');
     }
