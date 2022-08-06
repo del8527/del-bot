@@ -17,7 +17,7 @@ module.exports = {
 Note: Use this on servers dedicated to pit`)
         } else {
             message.channel.send(`
-        \`del help\` - The help command\n\`del ping\` - Try it!\n\`del socials\` - my socials\n\`del img <argument>\` - try \`del img floppa\`\n\`del help pit\` - Helps with hypixel verification
+        \`del help\` - The help command\n\`del ping\` - Try it!\n\`del socials\` - my discord\n\`del img <argument>\` - try \`del img floppa\`\n\`del help pit\` - Helps with hypixel verification
         `)
         }
         console.log(args.join(' '))
