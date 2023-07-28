@@ -24,7 +24,6 @@
 
 I built this bot for fun to learn more about discord.js and axios!
 
-If you want to use this bot for your server message me on discord: del#8527
 
 ### Syntax
 
